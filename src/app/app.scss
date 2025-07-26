@@ -1,0 +1,169 @@
+// App Container Styles
+.app-container {
+    width: 100%;
+    height: 100vh;
+    background: #f8fafc;
+    overflow: hidden;
+}
+
+.app-layout {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+// Sidebar Styles
+.sidebar {
+    width: 40%;
+    min-width: 40%;
+    background: #f6faff; // Light grey background for contact list
+    border-right: 1px solid #e2e8f0;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+// Main Content Area
+.main-content {
+    width: 60%;
+    background: white;
+    overflow-y: auto;
+    position: relative;
+}
+
+// Responsive Design - Mobile First Approach
+
+// Large Desktop (1200px and up)
+@media (min-width: 1200px) {
+    .sidebar {
+        width: 35%;
+        min-width: 35%;
+    }
+
+    .main-content {
+        width: 65%;
+    }
+}
+
+// Desktop (1024px to 1199px)
+@media (max-width: 1199px) and (min-width: 1024px) {
+    .sidebar {
+        width: 40%;
+        min-width: 40%;
+    }
+
+    .main-content {
+        width: 60%;
+    }
+}
+
+// Tablet Landscape (768px to 1023px)
+@media (max-width: 1023px) and (min-width: 768px) {
+    .sidebar {
+        width: 45%;
+        min-width: 45%;
+    }
+
+    .main-content {
+        width: 55%;
+    }
+}
+
+// Tablet Portrait (600px to 767px)
+@media (max-width: 767px) and (min-width: 600px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: 45vh;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .main-content {
+        width: 100%;
+        height: 55vh;
+    }
+}
+
+// Mobile Large (480px to 599px)
+@media (max-width: 599px) and (min-width: 480px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: 40vh;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .main-content {
+        width: 100%;
+        height: 60vh;
+    }
+}
+
+// Mobile Medium (375px to 479px)
+@media (max-width: 479px) and (min-width: 375px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: 35vh;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .main-content {
+        width: 100%;
+        height: 65vh;
+    }
+}
+
+// Mobile Small (320px to 374px)
+@media (max-width: 374px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: 30vh;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .main-content {
+        width: 100%;
+        height: 70vh;
+    }
+}
+
+// Extra Small Mobile (below 320px)
+@media (max-width: 319px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: 25vh;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .main-content {
+        width: 100%;
+        height: 75vh;
+    }
+}

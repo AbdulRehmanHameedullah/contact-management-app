@@ -1,0 +1,969 @@
+// Contact Details Component Styles
+.contact-details-container {
+    height: 100%;
+    background: transparent; // Remove background since main content has white background
+    overflow-y: auto;
+    padding: 2rem;
+    width: 70%; // 70% width
+    margin-left: 10%; // 10% gap from left
+    margin-right: 20%; // 20% gap from right
+    max-width: 800px; // Prevent it from getting too wide
+}
+
+// Default State
+.default-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #64748b;
+    text-align: center;
+
+    .default-icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+        color: #1e293b;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #64748b;
+        margin: 0;
+        max-width: 300px;
+    }
+}
+
+// Contact Header
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-left: 120px; // Align with field values (same as field-l width)
+
+    .contact-avatar {
+        img {
+            width: 120px; // Larger image
+            height: 120px; // Larger image
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .avatar-placeholder {
+            width: 120px; // Larger image
+            height: 120px; // Larger image
+            border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+    }
+
+    .contact-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; // Start from top
+        height: 120px; // Match image height
+        gap: 0.5rem; // Add gap between elements
+
+        .contact-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .contact-role {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start; // Align to top
+            flex-direction: row; // Keep horizontal layout for buttons
+
+            .action-btn {
+                background: white; // White background
+                border: 1px solid #e2e8f0; // Light grey border
+                color: #64748b;
+                cursor: pointer;
+                padding: 0.75rem 1.25rem; // Same padding as message button
+                border-radius: 8px; // Square with rounded corners like message button
+                transition: all 0.2s ease;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                height: 44px; // Match message button height
+                min-width: 44px; // Square aspect ratio for icon-only buttons
+
+                &:hover {
+                    background: #f1f5f9;
+                    color: #475569;
+                }
+
+                &.primary-btn {
+                    background: #8b5cf6;
+                    color: white;
+                    padding: 0.75rem 1.25rem;
+                    border-radius: 8px;
+                    font-weight: 500;
+                    border: none; // No border for primary button
+
+                    &:hover {
+                        background: #7c3aed;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Loading State
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+
+    .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid #e2e8f0;
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+        color: #64748b;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// Error State
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+    text-align: center;
+
+    .error-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+        margin: 0 0 0.5rem 0;
+        color: #1e293b;
+    }
+
+    p {
+        font-size: 0.875rem;
+        color: #64748b;
+        margin: 0 0 1.5rem 0;
+        max-width: 300px;
+    }
+
+    .retry-btn {
+        background: #3b82f6;
+        border: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #2563eb;
+        }
+    }
+}
+
+// Contact Details Content
+.contact-details-content {
+    .info-section {
+        margin-bottom: 2rem;
+
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .bio-content {
+            p {
+                color: #475569;
+                line-height: 1.6;
+                margin: 0;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+
+            .social-btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 8px; // Square with rounded corners
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                font-size: 0.875rem;
+                background: transparent;
+                color: #d1d5db; // Light grey color by default
+                transition: all 0.2s ease;
+
+                svg {
+                    color: #d1d5db; // Light grey color by default
+                    fill: #d1d5db;
+                    transition: color 0.2s, fill 0.2s;
+                }
+
+                // Facebook - blue on hover
+                &.facebook:hover {
+                    background: #1877f2;
+                    color: #fff;
+
+                    svg {
+                        color: #fff;
+                        fill: #fff;
+                    }
+                }
+
+                // Pinterest - red on hover
+                &.pinterest:hover {
+                    background: #e60023;
+                    color: #fff;
+
+                    svg {
+                        color: #fff;
+                        fill: #fff;
+                    }
+                }
+
+                // Twitter - blue on hover
+                &.twitter:hover {
+                    background: #1da1f2;
+                    color: #fff;
+
+                    svg {
+                        color: #fff;
+                        fill: #fff;
+                    }
+                }
+
+                // LinkedIn - blue on hover
+                &.linkedin:hover {
+                    background: #0077b5;
+                    color: #fff;
+
+                    svg {
+                        color: #fff;
+                        fill: #fff;
+                    }
+                }
+
+                // Google - red on hover
+                &.google:hover {
+                    background: #db4437;
+                    color: #fff;
+
+                    svg {
+                        color: #fff;
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    // Contact Fields
+    .contact-fields {
+        margin-bottom: 2rem;
+
+        .field-row {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.5rem 0; // Increased from 0.75rem for more gap between fields
+            border-bottom: 1px solid #f1f5f9;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .field-l {
+                width: 120px;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: #64748b;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                flex-shrink: 0;
+                margin-right: 0.5rem; // Reduced from 1rem for tighter spacing
+            }
+
+            .field-value {
+                flex: 1;
+                min-width: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between; // Space between text and badge
+                gap: 0.25rem; // Reduced from 0.5rem for tighter spacing
+
+                .value-text {
+                    color: #1e293b;
+                    font-weight: 500;
+                    word-break: break-all;
+                    flex: 1; // Take available space
+                }
+
+                .value-badge {
+                    background: #64748b; // Grey background
+                    color: #475569; // Darker grey text
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    flex-shrink: 0; // Don't shrink the badge
+                }
+
+                &.additional-value {
+                    margin-left: 0; // No additional margin, just the small gap above
+                }
+
+                // Social links styling within field-value
+                .social-links {
+                    display: flex;
+                    gap: 0.75rem;
+                    align-items: center;
+
+                    .social-btn {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 8px; // Square with rounded corners instead of circular
+                        border: 1px solid #e5e7eb; // 1px border to make it visible
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 600;
+                        font-size: 0.875rem;
+                        background: #ffffff; // Light grey background by default
+                        color: #9ca3af; // Light grey text by default
+                        transition: all 0.2s ease;
+
+                        svg {
+                            color: #9ca3af; // Light grey icons by default
+                            fill: #9ca3af;
+                            transition: all 0.2s ease;
+                        }
+
+                        // Facebook - blue on hover
+                        &.facebook:hover {
+                            background: #1877f2;
+                            color: #fff;
+
+                            svg {
+                                color: #fff;
+                                fill: #fff;
+                            }
+                        }
+
+                        // Pinterest - red on hover
+                        &.pinterest:hover {
+                            background: #e60023;
+                            color: #fff;
+
+                            svg {
+                                color: #fff;
+                                fill: #fff;
+                            }
+                        }
+
+                        // Twitter - blue on hover
+                        &.twitter:hover {
+                            background: #1da1f2;
+                            color: #fff;
+
+                            svg {
+                                color: #fff;
+                                fill: #fff;
+                            }
+                        }
+
+                        // LinkedIn - blue on hover
+                        &.linkedin:hover {
+                            background: #0077b5;
+                            color: #fff;
+
+                            svg {
+                                color: #fff;
+                                fill: #fff;
+                            }
+                        }
+
+                        // Google - red on hover
+                        &.google:hover {
+                            background: #db4437;
+                            color: #fff;
+
+                            svg {
+                                color: #fff;
+                                fill: #fff;
+                            }
+                        }
+
+                        // Hover effects - lift animation
+                        &:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                        }
+                    }
+                }
+            }
+
+            .field-values {
+                flex: 1;
+                min-width: 0;
+
+                .field-value {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem; // Reduced from 0.5rem for tighter spacing
+                    margin-bottom: 0.25rem; // Small gap between multiple values
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .value-text {
+                        color: #1e293b;
+                        font-weight: 500;
+                        word-break: break-all;
+                    }
+
+                    .value-badge {
+                        background: #e5effd; // Grey background
+                        color: #8083A3; // Darker grey text
+                        padding: 0.5rem 0.75rem; // Increased padding
+                        border-radius: 4px;
+                        font-size: 0.75rem;
+                        font-weight: 600;
+                        flex-shrink: 0;
+                    }
+
+                    &.additional-value {
+                        margin-left: 0; // No additional margin, just the small gap above
+                    }
+                }
+            }
+
+            &.additional-value {
+                padding: 0.25rem 0; // Much less padding for additional values under same label
+                border-bottom: none; // Remove border for additional values
+
+                .field-l {
+                    width: 120px; // Keep the same width for alignment
+                }
+            }
+        }
+    }
+}
+
+// Not Found State
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+    text-align: center;
+
+    .not-found-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+        margin: 0 0 0.5rem 0;
+        color: #1e293b;
+    }
+
+    p {
+        font-size: 0.875rem;
+        color: #64748b;
+        margin: 0 0 1.5rem 0;
+        max-width: 300px;
+    }
+
+    .back-btn {
+        background: #3b82f6;
+        border: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #2563eb;
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 1199px) and (min-width: 1024px) {
+    .contact-details-container {
+        padding: 1.75rem;
+        width: 75%;
+        margin-left: 8%;
+        margin-right: 17%;
+    }
+
+    .contact-header {
+        .contact-avatar {
+
+            img,
+            .avatar-placeholder {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .contact-info .contact-name {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .contact-details-container {
+        padding: 1.5rem;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .contact-header {
+        .contact-avatar {
+
+            img,
+            .avatar-placeholder {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+        .contact-info .contact-name {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 767px) and (min-width: 600px) {
+    .contact-details-container {
+        padding: 1.25rem;
+        width: 85%;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        overflow-x: hidden; // Prevent horizontal scroll
+    }
+
+    .contact-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding-left: 0;
+
+        .contact-avatar {
+
+            img,
+            .avatar-placeholder {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .contact-info {
+            height: auto;
+            gap: 0.25rem;
+
+            .contact-name {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .contact-details-content {
+        .contact-fields {
+            .field-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+
+                .field-l {
+                    width: auto;
+                    margin-right: 0;
+                    margin-bottom: 0.25rem;
+                }
+
+                .field-value {
+                    width: 100%;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 599px) and (min-width: 480px) {
+    .contact-details-container {
+        padding: 1rem;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        overflow-x: hidden; // Prevent horizontal scroll
+    }
+
+    .contact-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+        padding-left: 0;
+
+        .contact-avatar {
+
+            img,
+            .avatar-placeholder {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        .contact-info {
+            height: auto;
+            gap: 0.25rem;
+
+            .contact-name {
+                font-size: 1.125rem;
+            }
+
+            .contact-role {
+                font-size: 0.875rem;
+            }
+        }
+
+        .contact-actions {
+            gap: 0.5rem;
+            flex-wrap: wrap; // Allow buttons to wrap
+
+            .action-btn {
+                padding: 0.5rem 1rem;
+                height: 40px;
+
+                &.primary-btn {
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
+    }
+
+    .contact-details-content {
+        .contact-fields {
+            .field-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+
+                .field-l {
+                    width: auto;
+                    margin-right: 0;
+                    margin-bottom: 0.25rem;
+                    font-size: 0.8rem;
+                }
+
+                .field-value {
+                    width: 100%;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 479px) and (min-width: 375px) {
+    .contact-details-container {
+        padding: 0.75rem;
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        overflow-x: hidden; // Prevent horizontal scroll
+    }
+
+    .contact-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding-left: 0;
+
+        .contact-avatar {
+
+            img,
+            .avatar-placeholder {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .contact-info {
+            height: auto;
+            gap: 0.25rem;
+
+            .contact-name {
+                font-size: 1rem;
+            }
+
+            .contact-role {
+                font-size: 0.8rem;
+            }
+        }
+
+        .contact-actions {
+            gap: 0.375rem;
+            flex-wrap: wrap; // Allow buttons to wrap
+
+            .action-btn {
+                padding: 0.375rem 0.75rem;
+                height: 36px;
+
+                &.primary-btn {
+                    padding: 0.375rem 0.75rem;
+                }
+            }
+        }
+    }
+
+    .contact-details-content {
+        .contact-fields {
+            .field-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.375rem;
+
+                .field-l {
+                    width: auto;
+                    margin-right: 0;
+                    margin-bottom: 0.25rem;
+                    font-size: 0.75rem;
+                }
+
+                .field-value {
+                    width: 100%;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .contact-details-container {
+        padding: 0.5rem;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        overflow-x: hidden; // Prevent horizontal scroll
+    }
+
+    .contact-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding-left: 0;
+
+        .contact-avatar {
+
+            img,
+            .avatar-placeholder {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .contact-info {
+            height: auto;
+            gap: 0.25rem;
+
+            .contact-name {
+                font-size: 0.875rem;
+            }
+
+            .contact-role {
+                font-size: 0.75rem;
+            }
+        }
+
+        .contact-actions {
+            gap: 0.25rem;
+            flex-wrap: wrap; // Allow buttons to wrap
+
+            .action-btn {
+                padding: 0.25rem 0.5rem;
+                height: 32px;
+
+                &.primary-btn {
+                    padding: 0.25rem 0.5rem;
+                }
+            }
+        }
+    }
+
+    .contact-details-content {
+        .contact-fields {
+            .field-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+
+                .field-l {
+                    width: auto;
+                    margin-right: 0;
+                    margin-bottom: 0.25rem;
+                    font-size: 0.7rem;
+                }
+
+                .field-value {
+                    width: 100%;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 319px) {
+    .contact-details-container {
+        padding: 0.375rem;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        overflow-x: hidden; // Prevent horizontal scroll
+    }
+
+    .contact-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.375rem;
+        padding-left: 0;
+
+        .contact-avatar {
+
+            img,
+            .avatar-placeholder {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        .contact-info {
+            height: auto;
+            gap: 0.25rem;
+
+            .contact-name {
+                font-size: 0.8rem;
+            }
+
+            .contact-role {
+                font-size: 0.7rem;
+            }
+        }
+
+        .contact-actions {
+            gap: 0.25rem;
+            flex-wrap: wrap; // Allow buttons to wrap
+
+            .action-btn {
+                padding: 0.25rem 0.5rem;
+                height: 28px;
+
+                &.primary-btn {
+                    padding: 0.25rem 0.5rem;
+                }
+            }
+        }
+    }
+
+    .contact-details-content {
+        .contact-fields {
+            .field-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+
+                .field-l {
+                    width: auto;
+                    margin-right: 0;
+                    margin-bottom: 0.25rem;
+                    font-size: 0.65rem;
+                }
+
+                .field-value {
+                    width: 100%;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+}
