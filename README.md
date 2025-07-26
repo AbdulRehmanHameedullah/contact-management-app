@@ -1,207 +1,160 @@
-# Contact Management Application
+# Contact Management App
 
-A modern, responsive contact management application built with Angular 20, TypeScript, and SCSS. This application demonstrates best practices in frontend development including Object-Oriented Design, Software Design Patterns, and comprehensive testing approaches.
+A modern, responsive contact management application built with Angular 20. Features a clean two-column layout with a contact list sidebar and detailed contact information panel.
 
-## Features
+## 🚀 Features
 
-- **Contact List View**: Display all contacts with their basic information and email counts
-- **Contact Details View**: Detailed view of individual contacts with all email addresses
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Modern UI**: Beautiful gradient design inspired by modern dashboard templates
-- **Loading States**: Proper loading indicators and error handling
-- **TypeScript**: Fully typed for better development experience
-- **SCSS**: Advanced styling with variables, mixins, and responsive design
+- **Contact List**: Display all contacts with avatars, names, and roles
+- **Contact Details**: View detailed information including bio, email, phone, and social links
+- **Search Functionality**: Real-time search across all contact properties
+- **Responsive Design**: Fully responsive layout for all screen sizes (320px to 4K)
+- **Status Indicators**: Visual status dots (online, away, busy) on contact avatars
+- **Action Buttons**: Chat, call, and more options for each contact
+- **Social Media Integration**: Social media buttons with hover effects
+- **Mock Data**: 9 sample contacts with realistic information
 
-## Technology Stack
+## 🛠️ Technology Stack
 
-- **Angular 20**: Latest version with standalone components
-- **TypeScript**: For type safety and better development experience
-- **SCSS**: Advanced CSS preprocessing
-- **RxJS**: Reactive programming for data streams
-- **Angular Router**: Client-side routing
-- **Angular HttpClient**: For API communication
+- **Angular**: 20.1.0
+- **Node.js**: 22.15.0 (required)
+- **TypeScript**: Latest
+- **SCSS**: Advanced styling with responsive design
+- **RxJS**: Reactive programming for data handling
 
-## Project Structure
+## 📱 Responsive Design
+
+The application is fully responsive with breakpoints for:
+- **Large Desktop** (1200px+): 35% sidebar, 65% main content
+- **Desktop** (1024px-1199px): 40% sidebar, 60% main content
+- **Tablet Landscape** (768px-1023px): 45% sidebar, 55% main content
+- **Tablet Portrait** (600px-767px): Stacked layout
+- **Mobile Large** (480px-599px): Stacked layout
+- **Mobile Medium** (375px-479px): Stacked layout
+- **Mobile Small** (320px-374px): Stacked layout
+- **Extra Small** (below 320px): Stacked layout
+
+## 🎨 Design Features
+
+- **Two-Column Layout**: Contact list on left, details on right
+- **Modern UI**: Clean, professional design with subtle shadows and animations
+- **Color Scheme**: Purple primary theme with grey accents
+- **Typography**: Clear hierarchy with proper font weights and sizes
+- **Interactive Elements**: Hover effects and smooth transitions
+
+## 📋 Prerequisites
+
+Before running this application, make sure you have:
+
+- **Node.js**: Version 22.15.0 or higher
+- **npm**: Latest version
+- **Angular CLI**: Latest version
+
+## 🚀 Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/AbdulRehmanHameedullah/contact-management-app.git
+   cd contact-management-app
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   ng serve / npm start
+   ```
+
+4. **Open your browser** and navigate to `http://localhost:4200`
+
+## 📁 Project Structure
 
 ```
 src/
 ├── app/
 │   ├── components/
-│   │   ├── contact-list/
-│   │   │   ├── contact-list.component.ts
-│   │   │   ├── contact-list.component.html
-│   │   │   └── contact-list.component.scss
-│   │   └── contact-details/
-│   │       ├── contact-details.component.ts
-│   │       ├── contact-details.component.html
-│   │       └── contact-details.component.scss
+│   │   ├── contact-list/          # Contact list component
+│   │   └── contact-details/       # Contact details component
 │   ├── models/
-│   │   └── contact.interface.ts
+│   │   └── contact.interface.ts   # Contact data interfaces
 │   ├── services/
-│   │   ├── contact.service.ts
-│   │   └── mock-data.service.ts
-│   ├── app.component.ts
-│   ├── app.component.html
-│   ├── app.component.scss
-│   ├── app.config.ts
-│   └── app.routes.ts
+│   │   ├── contact.service.ts     # Contact API service
+│   │   └── mock-data.service.ts   # Mock data service
+│   ├── app.component.*            # Main app component
+│   ├── app.routes.ts             # Application routes
+│   └── app.config.ts             # App configuration
+├── styles.scss                   # Global styles
+└── main.ts                      # Application entry point
 ```
 
-## Installation and Setup
+## 🎯 Key Components
 
-### Prerequisites
+### Contact List Component
+- Displays all contacts in a scrollable list
+- Search functionality with autocomplete
+- Contact avatars with status indicators
+- Action buttons (chat, call, more options)
+- Responsive design for all screen sizes
 
-- Node.js (version 18 or higher)
-- npm (comes with Node.js)
+### Contact Details Component
+- Shows detailed contact information
+- Profile picture, name, and role
+- Action buttons (message, call, share, more)
+- Contact fields: Bio, Email, Dial, Meeting, Phone, Social
+- Social media buttons with brand colors
 
-### Installation Steps
+## 🔧 Development
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd contact-management-app
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm start
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:4200` to view the application.
-
-## Usage
-
-### Contact List Page (`/`)
-- Displays all contacts in a responsive grid layout
-- Shows contact name, company, position, and primary email
-- Click on any contact card to view detailed information
-- Refresh button to reload contact data
-
-### Contact Details Page (`/contact/:id`)
-- Shows comprehensive contact information
-- Displays all email addresses grouped by type
-- Shows personal, company, and system information
-- Back button to return to contact list
-
-## API Integration
-
-The application is designed to work with a REST API with the following endpoints:
-
-- `GET /contacts` - Get all contacts
-- `GET /contacts/{id}` - Get a specific contact
-- `GET /contacts/{id}/email_addresses` - Get email addresses for a contact
-
-### Mock Data
-
-Currently, the application uses mock data for demonstration purposes. To integrate with a real API:
-
-1. Update the `baseUrl` in `contact.service.ts`
-2. Uncomment the HTTP calls and comment out the mock data calls
-3. Set up your mockapi.io project or real backend
-
-## Design Patterns Used
-
-### 1. Service Pattern
-- `ContactService`: Centralized data access layer
-- `MockDataService`: Provides mock data for development
-
-### 2. Component Pattern
-- Standalone components with clear separation of concerns
-- Reusable components with proper encapsulation
-
-### 3. Observer Pattern
-- RxJS observables for reactive data handling
-- Proper subscription management
-
-### 4. Interface Pattern
-- Strongly typed interfaces for data models
-- Ensures type safety across the application
-
-## Responsive Design
-
-The application is fully responsive with breakpoints for:
-- **Desktop**: Full grid layout with detailed information
-- **Tablet**: Adjusted grid and spacing
-- **Mobile**: Single column layout with optimized touch targets
-
-## Testing
-
-The application includes:
-- Unit tests for components and services
-- Integration tests for data flow
-- E2E tests for user interactions (can be added)
-
-To run tests:
+### Running Tests
 ```bash
-npm test
+ng test
 ```
 
-## Production Build
-
-To create a production build:
+### Building for Production
 ```bash
-npm run build
+ng build
 ```
 
-The built files will be in the `dist/` directory.
+### Code Formatting
+```bash
+ng lint
+```
 
-## Assumptions and Simplifications
+## 📊 Sample Data
 
-### What's Simplified
-1. **Error Handling**: Basic error states are implemented, but comprehensive error handling would include retry logic, user-friendly error messages, and logging
-2. **Cross-Device Support**: Responsive design is implemented, but full cross-device support would include touch gestures, accessibility features, and offline support
-3. **Pagination**: For large datasets, pagination would be implemented
-4. **Search and Filtering**: Advanced search and filtering capabilities would be added
-5. **Real-time Updates**: WebSocket integration for real-time updates
+The application includes 9 sample contacts with realistic information:
+- Nicholas Gordon (Developer)
+- Bradley Malone (Sales Manager)
+- Johanna Stevens (UI/UX Designer)
+- Marvin Lambert (Designer)
+- Teresa Lloyd (PR agent)
+- Fred Haynes (Support Team)
+- Rose Peters (Project Manager)
+- Brian Watson (Developer)
+- Hettie Richardson (Developer)
 
-### Assumptions Made
-1. **API Structure**: Assumes RESTful API with specific endpoint structure
-2. **Data Format**: Assumes specific data structure for contacts and email addresses
-3. **User Permissions**: Assumes all users have access to all contacts
-4. **Performance**: Assumes reasonable data size (hundreds of contacts, not millions)
-
-## Future Enhancements
-
-1. **Advanced Features**
-   - Contact creation and editing
-   - Email address management
-   - Contact search and filtering
-   - Contact import/export
-
-2. **Performance Optimizations**
-   - Virtual scrolling for large lists
-   - Lazy loading of components
-   - Service worker for offline support
-
-3. **User Experience**
-   - Keyboard navigation
-   - Accessibility improvements
-   - Dark mode support
-   - Animations and transitions
-
-4. **Testing**
-   - Comprehensive unit tests
-   - Integration tests
-   - E2E tests with Cypress or Playwright
-
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
+## 👨‍💻 Author
 
-For questions or support, please open an issue in the repository.
+**Abdul Rehman Hameedullah**
+
+- GitHub: [@AbdulRehmanHameedullah](https://github.com/AbdulRehmanHameedullah)
+
+## 🙏 Acknowledgments
+
+- Built with Angular 20
+- Responsive design principles
+- Modern web development best practices
